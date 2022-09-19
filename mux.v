@@ -1,0 +1,16 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module mux#(WL=32)
+           (input sel,
+            input [WL-1:0] a,b,
+            output reg [WL-1:0] out);
+always @(sel,a,b) begin
+    if (sel) out = b;
+    else out = a;
+end
+endmodule
